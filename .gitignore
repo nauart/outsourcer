@@ -1,5 +1,4 @@
 node_modules/
-public/javascripts/
-public/resources/
+public/
 *.log
 Thumbs.db
