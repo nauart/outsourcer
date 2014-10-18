@@ -14,6 +14,17 @@ module.exports = function(grunt) {
 			}
 		},
 
+		jade: {
+			compile: {
+				options: {
+					debug: true
+				},
+				files: {
+					'public/index.html': 'frontend/templates/index.jade',
+				}
+			}
+		},
+
 		stylus: {
 			compile: {
 				options: {
@@ -61,12 +72,13 @@ module.exports = function(grunt) {
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-jshint');
+	grunt.loadNpmTasks('grunt-contrib-jade');
 	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-requirejs');
 	
-	grunt.registerTask('common', ['jshint', 'stylus', 'clean', 'copy']);
+	grunt.registerTask('common', ['jshint', 'jade', 'stylus', 'clean', 'copy']);
 
 	grunt.registerTask('default', ['common']);
 	grunt.registerTask('release', ['common', 'requirejs']);
