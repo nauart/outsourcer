@@ -15,6 +15,13 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
 
+app.use(function(req, res, next) {
+	res.status(404);
+	//logger.error('404: %s', req.url);
+	res.send('Page not found');
+	return;
+});
+
 var routes = require('./routes')(app);
 var server = app.listen(3030);
 
