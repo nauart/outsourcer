@@ -43,7 +43,10 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			libs: {files: [{expand: false, src: ['node_modules/requirejs/require.js'], dest: 'public/javascripts/libs/require.js'}]},
+			libs: {files: [{expand: false, src: ['node_modules/requirejs/require.js'], dest: 'public/javascripts/libs/require.js'},
+							{expand: false, src: ['node_modules/jquery/dist/jquery.js'], dest: 'public/javascripts/libs/jquery.js'},
+							{expand: false, src: ['node_modules/underscore/underscore.js'], dest: 'public/javascripts/libs/underscore.js'},
+							{expand: false, src: ['node_modules/backbone/backbone.js'], dest: 'public/javascripts/libs/backbone.js'}]},
 			js: {files: [{expand: true, cwd: 'frontend/javascripts/', src: ['**'], dest: 'public/javascripts/'}]},
 			resources: {files: [{expand: true, cwd: 'frontend/resources/', src: ['**'], dest: 'public/resources/'}]}
 		},
